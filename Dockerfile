@@ -26,9 +26,9 @@ COPY --from=venvBuilder /isso .
 
 # Configuration
 VOLUME /db /config
-EXPOSE 8080
+EXPOSE 80
 ENV ISSO_SETTINGS /config/isso.cfg
-CMD ["/isso/bin/gunicorn", "-b", "0.0.0.0:8080", "-w", "4", "--preload", "isso.run", "--worker-tmp-dir", "/dev/shm"]
+CMD ["/isso/bin/gunicorn", "-b", "0.0.0.0:80", "-w", "4", "--preload", "isso.run", "--worker-tmp-dir", "/dev/shm"]
 
 # Example of use:
 #
